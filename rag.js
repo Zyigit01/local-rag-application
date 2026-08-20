@@ -24,7 +24,7 @@ class BasitVektorDB {
       this.hafiza.push({ doc: docs[i], vector: vektorler[i] });
     }
   }
-  async benzerlikAramasi(soru, k=3) {
+  async benzerlikAramasi(soru, k=6) {
     const soruVektoru = await this.embeddings.embedQuery(soru);
     const sonuclar = this.hafiza.map(item => {
       let carpim = 0, normA = 0, normB = 0;
@@ -40,7 +40,7 @@ class BasitVektorDB {
     sonuclar.sort((a, b) => b.benzerlik - a.benzerlik);
     return sonuclar.slice(0, k).map(r => r.doc);
   }
-  asRetriever(k=3) {
+  asRetriever(k=6) {
     return {
       pipe: (fn) => async (soru) => fn(await this.benzerlikAramasi(soru, k)),
       invoke: async (soru) => await this.benzerlikAramasi(soru, k)
@@ -88,8 +88,8 @@ async function soruSor(soru) {
     throw new Error("Lütfen önce bir PDF yükleyin!");
   }
 
-  // en iyi 3 parcayi getir
-  const retriever = vektorVeritabani.asRetriever(3); 
+  // en iyi 6 parcayi getir (daha fazla baglam icin)
+  const retriever = vektorVeritabani.asRetriever(6); 
   
   // Prompt kismi
   const template = `Sen bir asistansın. Sadece aşağıdaki metne (Context) bakarak soruyu cevapla.
