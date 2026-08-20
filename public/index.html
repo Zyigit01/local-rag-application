@@ -213,7 +213,7 @@
     <div class="app-wrapper">
         <div class="header">
             <h1>Microsoft AI Innovators</h1>
-            <p>Local RAG Project (Phi-3)</p>
+            <p>Local RAG Project (Llama-3.1)</p>
         </div>
 
         <div class="main-content">
@@ -230,7 +230,7 @@
             <div class="chat-container">
                 <div class="chat-history" id="chatHistory">
                     <div class="message bot-message">
-                        <strong>Phi-3:</strong><br/><br/>
+                        <strong>Llama-3.1:</strong><br/><br/>
                         Merhaba! 👋 Staj projenize hoş geldiniz. Lütfen yukarıdan bir belge yükleyin, ardından bana o belgeyle ilgili sorular sormaya başlayabilirsiniz.
                     </div>
                 </div>
@@ -315,7 +315,7 @@
                 const result = await response.json();
                 
                 if (result.answer) {
-                    addMessageToChat('Phi-3', result.answer, 'bot-message');
+                    addMessageToChat('Llama-3.1', result.answer, 'bot-message');
                 } else {
                     addMessageToChat('Hata', result.error || 'Bir sorun oluştu.', 'bot-message');
                 }

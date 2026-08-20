@@ -55,7 +55,7 @@ const embeddings = new OllamaEmbeddings({
 });
 
 const model = new Ollama({
-  model: "phi3",
+  model: "llama3.1",
   baseUrl: "http://localhost:11434",
   temperature: 0.1, // sacmalamamasi icin 0.1 yaptim
 });

@@ -9,12 +9,12 @@ Bu proje, **Microsoft AI Innovators Yaz Stajı** kapsamında geliştirilmiş, ve
 Gizli ve hassas kurum belgelerinin internete (OpenAI, Gemini vb. public servislere) çıkarılmadan, doğrudan bilgisayarınızın işlem gücüyle güvenli bir şekilde analiz edilmesi prensibine dayanır.
 
 ## 🌟 Proje Özeti
-Kullanıcıların yüklediği PDF dosyaları, **LangChain** kullanılarak anlamlı parçalara (chunks) bölünür ve **nomic-embed-text** modeli ile vektörlere dönüştürülerek yerel bellekte saklanır. Kullanıcı arayüzünden bir soru sorulduğunda, soruya en yakın metin parçaları bulunur ve Microsoft'un küçük ama güçlü **Phi-3** dil modeline iletilerek tamamen lokal ve güvenli bir yanıt üretilir.
+Kullanıcıların yüklediği PDF dosyaları, **LangChain** kullanılarak anlamlı parçalara (chunks) bölünür ve **nomic-embed-text** modeli ile vektörlere dönüştürülerek yerel bellekte saklanır. Kullanıcı arayüzünden bir soru sorulduğunda, soruya en yakın metin parçaları bulunur ve Microsoft'un küçük ama güçlü **Llama-3.1** dil modeline iletilerek tamamen lokal ve güvenli bir yanıt üretilir.
 
 ## 🛠️ Mimari & Kullanılan Teknolojiler
 - **Backend:** Node.js, Express.js
 - **Frontend:** HTML5, CSS3, Vanilla JS (Modern & Kurumsal UI)
-- **Yapay Zeka (LLM):** Microsoft Phi-3 (Ollama üzerinden)
+- **Yapay Zeka (LLM):** Microsoft Llama-3.1 (Ollama üzerinden)
 - **Embedding Modeli:** nomic-embed-text
 - **Vektör Veritabanı:** MemoryVectorStore (LangChain)
 - **Belge İşleme:** pdf-parse, RecursiveCharacterTextSplitter
@@ -24,7 +24,7 @@ Kullanıcıların yüklediği PDF dosyaları, **LangChain** kullanılarak anlaml
 1. **Gereksinimler:** Bilgisayarınızda Node.js ve [Ollama](https://ollama.com) yüklü olmalıdır.
 2. **Modelleri İndirin:** Komut satırını açıp lokal modelleri indirin:
    ```bash
-   ollama pull phi3
+   ollama pull llama3.1
    ollama pull nomic-embed-text
    ```
 3. **Projeyi Başlatın:**
